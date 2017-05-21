@@ -24,6 +24,7 @@ export class AppComponent {
     if(this.newItem!=""){
       var tempTask = { task : this.newItem, done : false};
       this.items.push(tempTask);
+      this.crudDataService.addTask(tempTask);
     }
   }
   removeItem = function(index){

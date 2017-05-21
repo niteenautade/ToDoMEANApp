@@ -10,8 +10,12 @@ module.exports = function(app){
     });
 
    app.post('/api/add', function(req, res) {
-       newTask.save(function(err) {
+       var task = req.body;
+       console.log(req);
+       console.log("Taskkkkk>>>>>>>",task);
+       Task.addTask(task,function(err,task) {
         if (err) throw err;
+        res.json(task);
         console.log('Task added!');
         });
    });

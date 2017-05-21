@@ -3,11 +3,11 @@ var path = require('path');
 var http = require('http');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var Task = require('./server/models/tasks');
-var app = express()
-
+var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+var Task = require('./server/models/tasks');
+
 mongoose.connect('mongodb://localhost/db_todo');
 require('./server/routes')(app);
 
