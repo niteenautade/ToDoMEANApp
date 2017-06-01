@@ -18,7 +18,7 @@ export class AppComponent {
   getTasks = function(tasks){
     this.items = tasks;
   }
-  //items = ['AngularJS','ReactJS','jQuery'];
+  
   newItem = "";
   pushItem = function(){
     if(this.newItem!=""){
@@ -27,7 +27,9 @@ export class AppComponent {
       this.crudDataService.addTask(tempTask);
     }
   }
-  removeItem = function(index){
+  removeItem = function(index,id,i){
     this.items.splice(index,1);
+    console.log("Del" , id);
+    this.crudDataService.deleteTask(i);
   }
 }

@@ -16,7 +16,7 @@
       <ul>
         <li *ngFor="let i of items;let ind = index">
             {{i.task}}
-            <span (click)=removeItem(ind) class="pull-right spanrightmargin">x</span>
+            <span (click)=removeItem(ind,i._id,i) class="pull-right spanrightmargin">x</span>
           </li>
       </ul>
     </div>

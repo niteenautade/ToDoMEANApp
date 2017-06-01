@@ -22,5 +22,16 @@ export class CrudDataService {
     );
   }
 
+  deleteTask(task){
+    /*var headers = new Headers();
+    headers.append('Content-Type','application/json;charset=utf-8');*/
+    console.log('yahoooooo',task._id);
+    var url = '/api/delete/'+task._id;
+    this.http.delete(url).subscribe(
+      ()=>{},
+      err=> console.log(err)
+    );
+  }
+
 
 }
